@@ -14,7 +14,7 @@ openEvtxFile Function: This function is used for opening an EVT (Windows Event L
 
 Log Parsing Functions:
 
-parseZeekConn: This function is designed to parse log entries in a format related to Zeek (formerly known as Bro) connection logs.
+parseZeekConn: This function is designed to parse log entries in a format related to Zeek connection logs.
 parseZeekdns: This function is designed to parse log entries related to Zeek DNS logs.
 parseZeekHttp: This function is designed to parse log entries related to Zeek HTTP logs.
 parseSmb: This function is designed to parse log entries related to SMB (Server Message Block) protocol logs.
@@ -22,4 +22,4 @@ These functions split the log entries into fields and create dictionaries with m
 
 parseEvtx Function: This function is used to parse Windows Event Log (EVTX) entries. It extracts timestamp, event ID, and event data from an EVT XML record and stores them in a dictionary.
 
-detectRundll32 Function: This function opens an EVT file specified by the path, likely representing Windows Event Log data. It then iterates through the log entries, attempting to parse each entry using the parseEvtx function. If the event ID is "4688" (indicating a process creation event) and the command line contains "rundll32" while the parent process name contains "powershell" or "cmd," it prints the command line. This function seems to be focused on detecting specific suspicious behavior related to the execution of rundll32.
+detectRundll32 Function: This function opens an EVT file specified by the path for Windows Event Log data. It then iterates through the log entries, to parse each entry using the parseEvtx function. If the event ID is "4688" and the command line contains "rundll32" while the parent process name contains "powershell" or "cmd," it prints the command line. 
